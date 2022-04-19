@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import SearchBar from "./components/SearchBar";
+import NavBar from "./components/NavBar";
 import Word from "./components/Word";
+import Footer from "./components/Footer";
+
 
 const theme = createTheme({
   components: {
@@ -42,8 +43,9 @@ setResults(data['list'])
 },[dict])
   return (
     <ThemeProvider theme={theme}>
-      <SearchBar dictWord={dictWord} />
+      <NavBar dictWord={dictWord} />
       <Word results={results}/>
+      <Footer />
     </ThemeProvider>
   );
 }

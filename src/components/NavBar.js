@@ -16,12 +16,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-start",
     justifyContent: "",
     margin: "0em",
-    padding: "0.5em",
+    paddingLeft: "3em",
+    paddingBottom: "1em"
   },
   form: {
     display: "flex",
     flexDirection: "row",
-    padding:"1em",
+    marginTop:"0.2em",
 
   },
   formItems: {
@@ -34,7 +35,10 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 1em"
   },
   logo:{
-    width: "7em", height: "4em", borderRadius: "10px" 
+    marginTop: "2em",
+    width: "7em",
+     height: "4em",
+      borderRadius: "10px" 
   }
 }));
 

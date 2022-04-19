@@ -1,4 +1,4 @@
-import { Card, Stack, Typography, Button, Divider, Container, IconButton } from "@mui/material";
+import { Card, Typography, Button,  Container, IconButton } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -11,24 +11,25 @@ import image from "../images/urban.jpg"
 import { makeStyles } from "@mui/styles"
 const useStyles = makeStyles((theme) => ({
   cover:{
-    padingTop: "3em"
+    backgroundColor: theme.palette.primary.main,
+    padingTop: "3em",
+    margin: "1em",
+    
   }
   ,
-  audio: {
-    display: "none",
-    [theme.breakpoints.down('md')]: {
-      display: "none",
-    },
-  },
   container: {
     margin: 2,
     padding: 2,
   },
   bigContainer: {
-    width: "60vw",
-    margin: "5em 3em",
+    maxWidth: "500px",
+    margin: "1em",
     padding: ".3em",
-    borderRadius: "1em"
+    borderRadius: "2em",
+    [theme.breakpoints.up('md')]: {
+      margin: "1em auto",
+      minWidth: "500px"
+    },
   },
   upper: {
     display: "flex",
@@ -110,7 +111,7 @@ export default function Word({ results }) {
 
 
   return (
-    <Container  sx={{}} className={classes.cover}>
+    <Container  sx={{display: 'Grid', }} className={classes.cover}>
       {
         wordArray.length > 0 ?
           wordArray.map((wordDef, i) => (
@@ -125,13 +126,7 @@ export default function Word({ results }) {
                     >
                       {wordDef['word']}
                     </Typography>
-                    <div className="classes.audio">
-                      {((wordDef['sound_urls'].length > 0) &&
-                        <audio controls autoPlay muted>
-                          <source src={wordDef['sound_urls']} type="audio/wav" />
-                        </audio>)
-                      }
-                    </div>
+                    
                   </div>
 
                   <div className="classes.share" >
