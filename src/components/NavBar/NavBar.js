@@ -1,48 +1,10 @@
 import { TextField, Button, Autocomplete } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+
 import React, { useState } from "react";
-import logo from "../images/urban.jpg";
+import logo from "../../assets/images/urban.jpg";
+import {useStyles} from './styles'
 
-const useStyles = makeStyles((theme) => ({
-  nav: {
-    margin: "0",
-    padding: "0em",
-    backgroundColor: "#000034",
-    width: "100%",
-    
-    zIndex: "1",
-  },
-  navContainer: {
-    alignItems: "flex-start",
-    justifyContent: "",
-    margin: "0em",
-    paddingLeft: "3em",
-    paddingBottom: "1em"
-  },
-  form: {
-    display: "flex",
-    flexDirection: "row",
-    marginTop:"0.2em",
-
-  },
-  formItems: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    
-  },
-  button: {
-    margin: "0 1em"
-  },
-  logo:{
-    marginTop: "2em",
-    width: "7em",
-     height: "4em",
-      borderRadius: "10px" 
-  }
-}));
-
-export default function SearchBar({ dictWord }) {
+export default function SearchBar({ dictWord}) {
   const classes = useStyles();
   const [wordOptions, setWordOptions] = useState([]);
   const [targetValue, setTargetValue] = useState("");

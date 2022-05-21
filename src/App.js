@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import NavBar from "./components/NavBar";
-import Word from "./components/Word";
-import Footer from "./components/Footer";
-
+import {NavBar, Word, Footer} from "./components/"
 
 const theme = createTheme({
   components: {
@@ -21,8 +18,8 @@ const theme = createTheme({
 });
 
 export default function App() {
-  const [dict, setDict] = useState("");
-  const[results, setResults] = useState([])
+  const [dict, setDict] = useState('');
+  const[results, setResults] = useState(null)
   const dictWord = (w) => {
     setDict(w);
     
@@ -38,7 +35,7 @@ useEffect(()=>{
 .then(response => 
 	response.json()
 ).then((data)=>{
-setResults(data['list'])
+setResults(data.list)
 })
 },[dict])
   return (
